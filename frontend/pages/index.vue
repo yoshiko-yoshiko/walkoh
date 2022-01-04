@@ -1,9 +1,23 @@
 <template>
-  <Tutorial/>
+  <div>
+    <h1 class="title">
+      {{ text }}
+    </h1>
+  </div>
 </template>
 
 <script>
 export default {
-  name: 'IndexPage'
-}
+  async asyncData({ $axios }) {
+    const text = await $axios.$get('/');
+    return {
+      text,
+    };
+  },
+  data() {
+    return {
+      text: '',
+    };
+  },
+};
 </script>
