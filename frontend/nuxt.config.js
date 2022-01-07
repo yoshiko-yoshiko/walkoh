@@ -2,6 +2,15 @@ require('dotenv').config();
 const { API_URL } = process.env;
 
 export default {
+  router: {
+    extendRoutes(routes, resolve) {
+      routes.push({
+        name: '404error',
+        path: '*',
+        component: resolve('/components/error/404.vue')
+      })
+    }
+  },
   // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
   ssr: false,
 
