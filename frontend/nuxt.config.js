@@ -45,6 +45,10 @@ export default {
     {
       src: '~/plugins/axios/client.js',
       mode: "client"
+    },
+    {
+      src: '~/plugins/axios/api.js',
+      mode: "client"
     }
   ],
 
