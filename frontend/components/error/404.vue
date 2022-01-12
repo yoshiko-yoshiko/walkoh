@@ -7,14 +7,5 @@
         また、つながらない場合は時間をおいて再度アクセスしてください。
         </p>
     </div>
+    <!-- style書くだけ -->
 </template>
-
-<script>
-export default {
-
-}
-</script>
-
-<style>
-
-</style>
