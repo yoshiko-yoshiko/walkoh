@@ -1,0 +1,77 @@
+@startuml
+    class user {
+        + user_id: string(255)
+        ---
+        name: string(255)
+        mail: string(255)
+        password: string(255)
+    }
+    class buyer {
+        + buyer_id: string(255)
+        ---
+    }
+    class owner{
+        + owner_id
+        ---
+    }
+    class follow{
+        + follow_id
+    }
+
+    class pictures{
+    + pictures_id: string(255)
+    ---
+    name: string(255)
+    Owner: string(255)
+    }
+    class pictures_tag{
+    + pictures_id: string(255)
+    + pictures_title: string(255)
+    ---
+    }
+    class tag{
+    + tag_id: string(255)
+    ---
+    tag_title: string(255)
+    tag_content: string(255)
+}
+    class koten{
+        + primary_key
+        ---
+        #
+    }
+class like{
+        + user_id
+        + post_id
+        ---
+}
+class post{
+        + primary_key
+        ---
+        # id
+        # title
+        # content
+        # tag
+        # user_id
+    }
+class order{
+        + primary_key
+        ---
+        # buyer
+        #
+    }
+
+buyer -- user
+user -- owner
+user -- post
+user -- pictures
+user -> follow:follow機能
+user -- koten
+
+pictures -- pictures_tag
+pictures_tag -- tag
+
+koten -- post
+post -> like:いいね機能
+post -- order
+@enduml

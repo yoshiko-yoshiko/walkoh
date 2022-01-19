@@ -46,6 +46,14 @@ return [
       'provider' => 'users',
       'hash' => false,
     ],
+
+    'guards' => [
+      'users' => [
+          'driver' => 'jwt',
+          'provider' => 'users',
+          'hash' => false,
+      ],
+  ],
   ],
 
   /*
