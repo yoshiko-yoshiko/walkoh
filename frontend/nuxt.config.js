@@ -2,6 +2,16 @@ require('dotenv').config();
 const { API_URL } = process.env;
 
 export default {
+  // routerを使い404に飛ばしている
+  // router: {
+  //   extendRoutes(routes, resolve) {
+  //     routes.push({
+  //       name: '404error',
+  //       path: '*',
+  //       component: resolve('/components/error/404.vue')
+  //     })
+  //   }
+  // },
   // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
   ssr: false,
 
@@ -28,6 +38,18 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
+    {
+      src: '~/plugins/axios/index.js',
+      mode: "client"
+    },
+    {
+      src: '~/plugins/axios/client.js',
+      mode: "client"
+    },
+    {
+      src: '~/plugins/axios/api.js',
+      mode: "client"
+    }
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -44,8 +66,27 @@ export default {
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
     '@nuxtjs/proxy',
-    '@nuxtjs/dotenv'
+    '@nuxtjs/dotenv',
+    '@nuxtjs/auth'
   ],
+
+  auth: {
+    redirect: {
+      login: '/login',   // 未ログイン時に認証ルートへアクセスした際のリダイレクトURL
+      logout: '/login',  // ログアウト時のリダイレクトURL
+      callback: false,   // Oauth認証等で必要となる コールバックルート
+      home: '/',         // ログイン後のリダイレクトURL
+    },
+    strategies: {
+      local: {
+        endpoints: {
+          login: { url: 'api/login', method: 'post', propertyName: 'token' },
+          user: { url: 'api/me', method: 'get', propertyName: false},
+          logout: false
+        },
+      }
+    }
+  },
 
   env:{
     API_URL,

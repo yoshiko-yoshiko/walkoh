@@ -22,7 +22,7 @@ node:14.15.3-alpine
 
 ```
 $ git clone git@github.com:zbraa/walkoh.git
-$ cd wolkoh
+$ cd walkoh
 $ make nuxt
 $ make backend
 (任意)
