@@ -128,6 +128,8 @@ export default {
 };
 </script>
 ```
+## composerのバージョンを各自であげてほしい 2022/01/19
+- docker-compose exec app composer self-update --2
 
 ### nuxt
 
