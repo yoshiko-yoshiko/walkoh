@@ -2,7 +2,6 @@ require('dotenv').config();
 const { API_URL } = process.env;
 
 export default {
-  // routerを使い404に飛ばしている
   // router: {
   //   extendRoutes(routes, resolve) {
   //     routes.push({

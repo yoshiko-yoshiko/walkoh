@@ -10,13 +10,6 @@
         + buyer_id: string(255)
         ---
     }
-    class owner{
-        + owner_id
-        ---
-    }
-    class follow{
-        + follow_id
-    }
 
     class pictures{
     + pictures_id: string(255)
