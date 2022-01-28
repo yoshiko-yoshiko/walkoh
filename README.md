@@ -18,6 +18,10 @@ mysql:5.7
 
 node:14.15.3-alpine
 
+## laravelのdocker-imageに入るとき
+```
+docker-compose exec app /bin/sh
+```
 ## Usage
 
 ```

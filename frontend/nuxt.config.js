@@ -2,15 +2,7 @@ require('dotenv').config();
 const { API_URL } = process.env;
 
 export default {
-  // router: {
-  //   extendRoutes(routes, resolve) {
-  //     routes.push({
-  //       name: '404error',
-  //       path: '*',
-  //       component: resolve('/components/error/404.vue')
-  //     })
-  //   }
-  // },
+
   // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
   ssr: false,
 
@@ -66,7 +58,7 @@ export default {
     '@nuxtjs/axios',
     '@nuxtjs/proxy',
     '@nuxtjs/dotenv',
-    '@nuxtjs/auth'
+    '@nuxtjs/auth-next'
   ],
 
   auth: {
@@ -77,14 +69,25 @@ export default {
       home: '/',         // ログイン後のリダイレクトURL
     },
     strategies: {
-      local: {
-        endpoints: {
-          login: { url: 'api/login', method: 'post', propertyName: 'token' },
-          user: { url: 'api/me', method: 'get', propertyName: false},
-          logout: false
-        },
+      User: {
+          provider: 'laravel/jwt',
+          url: '/Users',
+          token: {
+              property: 'access_token',
+              maxAge: 60 * 60,
+          },
+          refreshToken: {
+              property: 'access_token',
+              maxAge: 20160 * 60,
+          },
+          endpoints: {
+              login: { url: '/login', method: 'post', propertyName: 'access_token' },
+              logout: { url: '/logout', method: 'post' },
+              refresh: { url: '/refresh', method: 'post' , propertyName: 'access_token'},
+              user: { url: '/me', method: 'get', propertyName: false},
+        }
       }
-    }
+    },
   },
 
   env:{

@@ -10,7 +10,7 @@ use Tymon\JWTAuth\Http\Middleware\BaseMiddleware;
 | API Routes
 |--------------------------------------------------------------------------
 */
-Route::Group(['middleware' => 'api','prefix' => 'User'], function($router){
+Route::Group(['middleware' => 'api','prefix' => 'User'], function ($router){
   Route::post('/login', [AuthController::class,'login']);
   Route::post('/logout', [AuthController::class, 'logout']);
   Route::post('/refresh', [AuthController::class, 'refresh']);
