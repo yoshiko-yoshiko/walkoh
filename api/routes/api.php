@@ -18,5 +18,5 @@ Route::Group(['middleware' => 'api','prefix' => 'User'], function ($router){
 });
 
 Route::get("/", function () {
-  return "おちんちん";
+  return "aaaaa";
 });
