@@ -1,9 +1,14 @@
 module.exports = {
-  content: ["./node_modules/@themesberg/flowbite/dist/flowbite.bundle.js"],
+  content: [],
   theme: {
-    extend: {},
+    extend: {
+      colors:{
+        'hoge':'#EDE4DC',
+        'fuga':'#A4A4A4',
+        'tinpo':'#4ACEA2'
+      },
+    },
   },
   plugins: [
-    require('@themesberg/flowbite/plugin')
   ],
 }

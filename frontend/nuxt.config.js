@@ -66,7 +66,7 @@ export default {
       login: '/login',   // 未ログイン時に認証ルートへアクセスした際のリダイレクトURL
       logout: '/login',  // ログアウト時のリダイレクトURL
       callback: false,   // Oauth認証等で必要となる コールバックルート
-      home: '/',         // ログイン後のリダイレクトURL
+      home: '/home',         // ログイン後のリダイレクトURL
     },
     strategies: {
       User: {
@@ -81,10 +81,10 @@ export default {
               maxAge: 20160 * 60,
           },
           endpoints: {
-              login: { url: '/login', method: 'post', propertyName: 'access_token' },
-              logout: { url: '/logout', method: 'post' },
-              refresh: { url: '/refresh', method: 'post' , propertyName: 'access_token'},
-              user: { url: '/me', method: 'get', propertyName: false},
+            login: { url: '/login', method: 'post', propertyName: 'access_token' },
+            logout: { url: '/logout', method: 'post' },
+            refresh: { url: '/refresh', method: 'post' , propertyName: 'access_token'}, 
+            user: { url: '/me', method: 'get', propertyName: false},
         }
       }
     },
@@ -103,5 +103,11 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
+    postcss:{
+      plugins:{
+        tailwindcss:{},
+        autoprefixer:{},
+      },
+    },
   }
 }

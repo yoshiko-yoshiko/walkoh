@@ -11,11 +11,9 @@ class User extends Authenticatable implements JWTSubject
 {
   use Notifiable;
 
-  public function getJWTIdentifier()
-  {
+  public function getJWTIdentifier() {
     return $this->getKey();
-  }
-
+}
   /**
    * The attributes that are mass assignable.
    *
@@ -43,8 +41,7 @@ class User extends Authenticatable implements JWTSubject
     'email_verified_at' => 'datetime',
   ];
 
-  public function getJWTCustomClaims()
-  {
-    return[];
+  public function getJWTCustomClaims() {
+    return [];
   }
 }

@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 use Validator;
 use Illuminate\Http\Exceptions\HttpResponseException;
+
 class AuthController extends Controller
 {
     /**
@@ -25,6 +26,7 @@ class AuthController extends Controller
     */
     public function login(Request $request){
         $validator = Validator::make($request->all(), [
+            'name' => 'required|name',
             'email' => 'required|email',
             'password' => 'required|string|min:6',
         ]);
@@ -46,6 +48,7 @@ class AuthController extends Controller
      */
     public function logout() {
         auth()->logout();
+
         return response()->json(['message' => 'User successfully signed out']);
     }
 
