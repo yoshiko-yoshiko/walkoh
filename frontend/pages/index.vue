@@ -1,23 +1,11 @@
 <template>
-  <div>
-    <h1 class="title">
-      {{ text }}
-    </h1>
-  </div>
+    <Tutorial/>
 </template>
 
 <script>
+import Tutorial from "../components/Tutorial.vue";
 export default {
-  async asyncData({ $axios }) {
-    const text = await $axios.$get('/');
-    return {
-      text,
-    };
-  },
-  data() {
-    return {
-      text: '',
-    };
-  },
-};
+    middleware:['auth'],
+    component: { Tutorial },
+}
 </script>
