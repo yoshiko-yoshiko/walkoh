@@ -66,7 +66,7 @@ export default {
       login: '/login',   // 未ログイン時に認証ルートへアクセスした際のリダイレクトURL
       logout: '/login',  // ログアウト時のリダイレクトURL
       callback: false,   // Oauth認証等で必要となる コールバックルート
-      home: '/home',         // ログイン後のリダイレクトURL
+      home: '/home',     // ログイン後のリダイレクトURL
     },
     strategies: {
       User: {

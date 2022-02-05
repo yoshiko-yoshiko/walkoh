@@ -18,85 +18,46 @@ mysql:5.7
 
 node:14.15.3-alpine
 
-## laravelのdocker-imageに入るとき
+## laravelのdocker-imageに入ってプラグインを追加するとき
 ```
 docker-compose exec app /bin/sh
+#が出てきたらcomposer require hoge/hoge:X.X.Xをする。
+インストールしたらLineもしくは誰かに報告しよう
+グループメンバーはcomposer installをしてください
 ```
+## Nuxtのdocker-imageに入ってプラグインを追加するとき
+```
+docker-compose exec front /bin/sh
+#が出てきたらをnpm or yarn add @nuxt-hoge/hogeする。
+インストールしたらLineもしくは誰かに報告しよう
+グループメンバーはnpm installをしてください。
+```
+
 ## Usage
 
 ```
-$ git clone git@github.com:zbraa/walkoh.git
-$ cd walkoh
-$ make nuxt
-$ make backend
-(任意)
-$ make typescript
-$ make composition-api
-$ make storybook
-```
+git clone git@github.com:zbraa/walkoh.git
 
-## nuxt.config.jsの修正
+frontendフォルダにあるpackage-lock.jsonを消す
 
-```
-require('dotenv').config();
-const { API_URL } = process.env;
+frontendフォルダに移動
 
-export default {
-  // Global page headers: https://go.nuxtjs.dev/config-head
-  // mode: 'spa',
-  head: {
-    title: 'frontend',
-    htmlAttrs: {
-      lang: 'ja',
-    },
-    meta: [
-      { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' },
-    ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
-  },
+npm install
 
-  // Global CSS: https://go.nuxtjs.dev/config-css
-  css: [],
+エラーがでたらnpm install --legacy-peer-deps
+（エラーメッセージが--force or --legacy-peer-depsをつけてねみたいなやつだった場合）
 
-  // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [],
+walkohフォルダに戻って.env.exampleを.envという名前でコピー
 
-  // Auto import components: https://go.nuxtjs.dev/config-components
-  components: true,
+docker-compose up -d --build
 
-  // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
-  buildModules: [
-    // https://go.nuxtjs.dev/typescript
-    '@nuxt/typescript-build',
-  ],
+docker-compose exec front touch .env
 
-  watchers: {
-    webpack: {
-      poll: true,
-    },
-  },
-
-  modules: ['@nuxtjs/axios', '@nuxtjs/proxy', '@nuxtjs/dotenv'],
-
-  env: {
-    API_URL,
-  },
-
-  proxy: {
-    '/api': process.env.API_URL,
-  },
-
-  axios: {
-    baseURL: process.env.API_URL,
-    browserBaseURL: process.env.API_URL,
-  },
-
-  // Build Configuration: https://go.nuxtjs.dev/config-build
-  build: {},
-};
-
+docker-compose exec app composer install
+docker-compose exec app cp .env.example .env
+docker-compose exec app php artisan key:generate
+docker-compose exec app php artisan migrate
+docker-compose exec app composer self-update --2
 ```
 
 ## frontend/.envの修正
@@ -105,54 +66,10 @@ export default {
 API_URL=http://localhost:18080/api
 ```
 
-## pages/index.vueの修正
-
-```
-<template>
-  <div>
-    <h1 class="title">
-      {{ text }}
-    </h1>
-  </div>
-</template>
-
-<script>
-export default {
-  async asyncData({ $axios }) {
-    const text = await $axios.$get('/');
-    return {
-      text,
-    };
-  },
-  data() {
-    return {
-      text: '',
-    };
-  },
-};
-</script>
-```
-## composerのバージョンを各自であげてほしい 2022/01/19
-- docker-compose exec app composer self-update --2
-
 ### nuxt
 
 http://127.0.0.1:3000/
 
-### storybook
-
-http://127.0.0.1:6006/
-
 ### api
 
 http://127.0.0.1:10080/
-
-## Adding a file
-
-### TypeScript
-
-https://qiita.com/Ryo9597/items/6e3d31bddcfb60cd3d8c#%E3%83%A2%E3%82%B8%E3%83%A5%E3%83%BC%E3%83%AB%E3%82%92%E8%BF%BD%E5%8A%A0
-
-### Composition-API
-
-https://qiita.com/Ryo9597/items/6e3d31bddcfb60cd3d8c#%E3%83%A2%E3%82%B8%E3%83%A5%E3%83%BC%E3%83%AB%E3%82%92%E8%BF%BD%E5%8A%A0-1
