@@ -28,7 +28,7 @@ docker-compose exec app /bin/sh
 ## Nuxtのdocker-imageに入ってプラグインを追加するとき
 ```
 docker-compose exec front /bin/sh
-#が出てきたらをnpm or yarn add @nuxt-hoge/hogeする。
+#が出てきたらをnpm install @nuxt-hoge/hogeする。
 インストールしたらLineもしくは誰かに報告しよう
 グループメンバーはnpm installをしてください。
 ```

@@ -40,7 +40,11 @@ export default {
     {
       src: '~/plugins/axios/api.js',
       mode: "client"
-    }
+    },
+    {
+      src: '~/plugins/VueAwesomeSwiper/VueAwesomeSwiper.js',
+      mode: "client"
+    },
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
