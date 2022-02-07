@@ -1,14 +1,27 @@
 module.exports = {
   content: [],
   theme: {
+    // この指定方法だと、カラーパレットは拡張ではなく上書きされる。デフォルトのカラーパレットが使えなくなるので、開発中は何かと不便なので変更。
+    // colors: {
+    //   primary: '#4ACEA2',
+    //   secondary: '#EDE4DC',
+    //   // ...
+    // },
+    fontFamily: {
+      body: [
+        '"Helvetica Neue"','Helvetica','Arial','YuGothic','"Yu Gothic"','"Hiragino Kaku Gothic ProN"','"ヒラギノ角ゴ ProN W3"','メイリオ', 'Meiryo','"ＭＳ ゴシック"','sans-serif'
+      ]
+    },
     extend: {
-      colors:{
-        'hoge':'#EDE4DC',
-        'fuga':'#A4A4A4',
-        'tinpo':'#4ACEA2'
+      colors: {
+        primary: {
+          main: '#4ACEA2',
+          sub: '#EDE4DC',
+          black: '#131313',
+        },
       },
     },
   },
-  plugins: [
-  ],
+  plugins: [],
+  mode: "jit",
 }
