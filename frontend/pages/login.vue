@@ -2,7 +2,7 @@
   <div class="container mx-auto flex flex-wrap md:h-screen items-center">
     <div class="w-full md:w-1/2 mt-20 md:mt-0">
       <div class="md:w-96 mx-auto md:mr-10">
-        <img src="~/assets/images/login_img.png" class="h-28 mt-0 md:mt-0 w-full object-cover md:object-contain md:h-auto test">
+        <img src="~/assets/images/login_img.png" class="h-28 mt-0 md:mt-0 w-full object-cover md:object-contain md:h-auto image_style">
       </div>
     </div>
     <div class="w-full md:w-1/2 mt-20 md:mt-0">
@@ -15,7 +15,7 @@
           <h1
             class="text-black text-3xl md:text-2xl font-bold text-left mb-4 md:mb-6"
           >
-            wolkohへようこそ！
+            walkohへようこそ！
           </h1>
 
           <form @submit.prevent="login">
@@ -66,9 +66,10 @@
   </div>
 </template>
 
-<style>
-  .test {
-    object-position: 30% 35%
+<style scoped>
+  .image_style {
+    object-position: 30% 35%;
+    box-shadow: 0px 5px 5px -5px rgba(0,0,0,0.5);
   }
 </style>
 
