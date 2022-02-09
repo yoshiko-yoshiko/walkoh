@@ -13,7 +13,7 @@
           </p>
 
           <h1
-            class="text-black text-3xl md:text-2xl font-bold text-left mb-4 md:mb-6"
+            class="text-primary-black text-3xl md:text-2xl font-bold text-left mb-4 md:mb-6"
           >
             walkohへようこそ！
           </h1>
@@ -22,7 +22,7 @@
             <div class="bg-white py-8 rounded-xl max-w-xs">
               <div class="space-y-4">
                 <div>
-                  <label for="email" class="block mb-1 text-black font-semibold"
+                  <label for="email" class="block mb-1 text-primary-black font-semibold"
                     >ユーザー名</label
                   >
                   <input
@@ -32,7 +32,7 @@
                   />
                 </div>
                 <div>
-                  <label for="email" class="block mb-1 text-black font-semibold"
+                  <label for="email" class="block mb-1 text-primary-black font-semibold"
                     >メールアドレス</label
                   >
                   <input
@@ -42,7 +42,7 @@
                   />
                 </div>
                 <div>
-                  <label for="email" class="block mb-1 text-black font-semibold"
+                  <label for="email" class="block mb-1 text-primary-black font-semibold"
                     >パスワード</label
                   >
                   <input
