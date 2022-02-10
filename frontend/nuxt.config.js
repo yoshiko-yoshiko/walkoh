@@ -62,7 +62,8 @@ export default {
     '@nuxtjs/axios',
     '@nuxtjs/proxy',
     '@nuxtjs/dotenv',
-    '@nuxtjs/auth-next'
+    '@nuxtjs/auth-next',
+    'nuxt-svg-loader'
   ],
 
   auth: {
