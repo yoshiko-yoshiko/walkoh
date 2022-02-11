@@ -46,7 +46,7 @@
                     >パスワード</label
                   >
                   <input
-                    type="text"
+                    type="password"
                     class="bg-indigo-50 px-4 py-2 outline-none rounded-md w-full border-2 border-indigo-50 focus:bg-white focus:border-primary-main"
                     v-model="auth.password"
                   />
