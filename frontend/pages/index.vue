@@ -27,7 +27,9 @@
 
           <!-- nav - start -->
           <nav class="hidden lg:flex gap-12">
-            <a href="#" class="text-primary-main text-lg font-semibold">リンク1</a>
+            <a href="#" class="text-primary-main text-lg font-semibold"
+              >リンク1</a
+            >
             <a
               href="#"
               class="text-gray-600 hover:text-primary-main active:text-indigo-700 text-lg font-semibold transition duration-100"
@@ -104,38 +106,45 @@
                 class="bg-gray-100 rounded-lg shadow-lg overflow-hidden relative z-10 top-12 md:top-16 left-12 md:left-16 -ml-12 lg:ml-0"
               >
                 <img
-                  src=""
+                  src="../assets/images/photo1.jpg"
                   loading="lazy"
-                  alt="あとでここにいれる"
-                  class="w-full h-full object-cover object-center"
+                  alt="あとでここに何が入れる"
+                  class="w-full h-full object-cover object-center image"
                 />
               </div>
 
               <div class="bg-gray-100 rounded-lg shadow-lg overflow-hidden">
                 <img
-                  src=""
+                  src="../assets/images/photo2.jpg"
                   loading="lazy"
-                  alt="あとでここにいれる"
-                  class="w-full h-full object-cover object-center"
+                  alt="あとでここに何が入れる"
+                  class="w-full h-full object-cover object-center image"
                 />
               </div>
             </div>
           </div>
         </section>
-				</div>
+      </div>
+    </div>
   </div>
-	</div>
 </template>
 
+<style scoped>
+.image {
+  max-width: 550px;
+  max-height: 550px;
+  object-fit: cover;
+}
+</style>
+
 <script>
-// import Tutorial from "../components/Tutorial.vue";
 export default {
   // middleware:['auth'],
-  // component: { Tutorial },
   head: {
     bodyAttrs: {
       class: "bg-primary-sub",
     },
   },
+  comments: {},
 };
 </script>
