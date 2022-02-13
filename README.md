@@ -33,6 +33,12 @@ docker-compose exec front /bin/sh
 グループメンバーはnpm installをしてください。
 ```
 
+## データベース入り方
+
+```
+docker-compose exec front /bin/sh
+```
+
 ## Usage
 
 ```
@@ -72,4 +78,8 @@ http://127.0.0.1:3000/
 
 ### api
 
-http://127.0.0.1:10080/
+http://127.0.0.1:18080/
+
+### phpmyadmin
+
+http://127.0.0.1:13000/
