@@ -37,6 +37,18 @@ services:
     ports:
       - 6306:3306
 
+  # phpmyadmin
+  phpmyadmin:
+    container_name: phpmyadmin
+    image: phpmyadmin/phpmyadmin
+    environment:
+      - PMA_ARBITRARY=1
+      - PMA_HOSTS=db
+      - PMA_USER=user
+      - PMA_PASSWORD=password
+    ports:
+      - 13000:80
+
   # node,nuxt(front)
   front:
     build:
