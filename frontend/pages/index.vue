@@ -55,13 +55,13 @@
             <a
               href="#"
               class="inline-block focus-visible:ring ring-indigo-300 text-primary-main hover:text-indigo-500 active:text-indigo-600 text-sm md:text-base font-semibold text-center rounded-lg outline-none transition duration-100 px-4 py-3"
-              >Sign in</a
+              >ログイン</a
             >
 
             <a
               href="#"
               class="inline-block bg-primary-sub hover:brightness-110 active:bg-primary-main focus-visible:ring ring-indigo-300 text-primary-main text-sm md:text-base font-semibold text-center rounded-lg outline-none transition duration-100 px-8 py-3 border-2 border-primary-main"
-              >Sign up</a
+              >会員登録</a
             >
           </div>
 
