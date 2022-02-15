@@ -2,14 +2,14 @@
   <div class="container mx-auto flex flex-wrap md:h-screen items-center">
     <div class="w-full md:w-1/2 mt-20 md:mt-0">
       <div class="md:w-96 mx-auto md:mr-10">
-        <img src="~/assets/images/login_img.png" class="h-28 mt-0 md:mt-0 w-full object-cover md:object-contain md:h-auto image_style">
+        <img src="~/assets/images/login_img.svg" class="h-28 mt-0 md:mt-0 w-full object-cover md:object-contain md:h-auto image_style">
       </div>
     </div>
-    <div class="w-full md:w-1/2 mt-20 md:mt-0">
+    <div class="w-full md:w-1/2 mt-20 md:mt-0 bg-primary-sub">
       <div class="flex justify-center items-center lg:justify-between">
         <div class="md:mt-8">
           <p class="text-primary-main font-bold text-left">
-            Sign Up
+            会員登録
           </p>
 
           <h1
@@ -19,7 +19,7 @@
           </h1>
 
           <form @submit.prevent="login">
-            <div class="bg-white py-8 rounded-xl max-w-xs">
+            <div class="bg-primary-sub py-8 rounded-xl max-w-xs">
               <div class="space-y-4">
                 <div>
                   <label for="email" class="block mb-1 text-primary-black font-semibold"
@@ -27,7 +27,7 @@
                   >
                   <input
                     type="text"
-                    class="bg-indigo-50 px-4 py-2 outline-none rounded-md w-full border-2 border-indigo-50 focus:bg-white focus:border-primary-main"
+                    class="bg-white px-4 py-2 outline-none rounded-md w-full border-2 border-white focus:border-primary-main"
                     v-model="auth.name"
                   />
                 </div>
@@ -37,7 +37,7 @@
                   >
                   <input
                     type="text"
-                    class="bg-indigo-50 px-4 py-2 outline-none rounded-md w-full border-2 border-indigo-50 focus:bg-white focus:border-primary-main"
+                    class="bg-white px-4 py-2 outline-none rounded-md w-full border-2 border-white focus:border-primary-main"
                     v-model="auth.email"
                   />
                 </div>
@@ -47,7 +47,7 @@
                   >
                   <input
                     type="text"
-                    class="bg-indigo-50 px-4 py-2 outline-none rounded-md w-full border-2 border-indigo-50 focus:bg-white focus:border-primary-main"
+                    class="bg-white px-4 py-2 outline-none rounded-md w-full border-2 border-white focus:border-primary-main"
                     v-model="auth.password"
                   />
                 </div>
@@ -69,17 +69,18 @@
 <style scoped>
   .image_style {
     object-position: 30% 35%;
-    box-shadow: 0px 5px 5px -5px rgba(0,0,0,0.5);
   }
 </style>
 
 <script>
 export default {
   middleware: ["auth"],
-  layout: "login",
   head() {
     return {
       title: "Login Page",
+      bodyAttrs: {
+      class: 'bg-primary-sub'
+    }
     };
   },
   data() {
