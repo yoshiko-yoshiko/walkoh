@@ -2,7 +2,7 @@
   <div class="container mx-auto flex flex-wrap md:h-screen items-center">
     <div class="w-full md:w-1/2 mt-20 md:mt-0">
       <div class="md:w-96 mx-auto md:mr-10">
-        <img src="~/assets/images/login_img.svg" class="h-28 mt-0 md:mt-0 w-full object-cover md:object-contain md:h-auto image_style">
+          <SvgLogin class="h-28 mt-0 md:mt-0 w-full object-cover md:object-contain md:h-auto image_style"/>
       </div>
     </div>
     <div class="w-full md:w-1/2 mt-20 md:mt-0 bg-primary-sub">
@@ -66,14 +66,17 @@
   </div>
 </template>
 
-<style scoped>
-  .image_style {
-    object-position: 30% 35%;
-  }
+<style lang="sass">
+  .image_style
+    object-position: 30% 35%
 </style>
 
 <script>
+import SvgLogin from "../assets/images/login_img.svg";
 export default {
+  components: {
+    SvgLogin,
+  },
   middleware: ["auth"],
   head() {
     return {
