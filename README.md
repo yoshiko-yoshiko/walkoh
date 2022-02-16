@@ -36,7 +36,7 @@ docker-compose exec front /bin/sh
 ## データベース入り方
 
 ```
-docker-compose exec front /bin/sh
+docker-compose exec db /bin/sh
 ```
 
 ## Usage

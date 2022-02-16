@@ -83,8 +83,19 @@
           <!-- buttons - end -->
         </header>
 
-        <section class="max-w-screen-2xl px-4 md:px-8 mx-auto">
+        <!-- user icon start -->
+        <section class="w-40 mx-auto box-border h-40 ">
+          <div class="flex item-center justify-between">
+            <span class=" w-fit mx-auto">
+              <img src="../assets/images/photo1.jpg" alt="photo" class="rounded-lg">
+            </span>
+          </div>
+
+          <div class="mt-4">
+            <p class="text-gray-600 font-bold text-2xl tracking-wide">Kaneisandaaa</p>
+          </div>
         </section>
+        <!-- user icon end -->
 	</div>
     </div>
 	</div>
