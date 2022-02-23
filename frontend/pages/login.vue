@@ -46,7 +46,7 @@
                 class="mt-8 w-full bg-primary-main text-indigo-50 font-bold py-2 rounded-md tracking-wide hover:brightness-110"
                 v-bind:disabled="processing"
               >
-                登録する
+                ログイン
               </button>
             </div>
           </form>
