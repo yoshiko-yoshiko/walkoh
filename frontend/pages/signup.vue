@@ -9,18 +9,28 @@
       <div class="flex justify-center items-center lg:justify-between">
         <div class="md:mt-8">
           <p class="text-primary-main font-bold text-left">
-            walkoh
+            会員登録
           </p>
 
           <h1
             class="text-primary-black text-3xl md:text-2xl font-bold text-left mb-4 md:mb-6"
           >
-            ログインする
+            walkohへようこそ！
           </h1>
 
           <form @submit.prevent="login">
             <div class="bg-primary-sub py-8 rounded-xl max-w-xs">
               <div class="space-y-4">
+                <div>
+                  <label for="email" class="block mb-1 text-primary-black font-semibold"
+                    >ユーザー名</label
+                  >
+                  <input
+                    type="text"
+                    class="bg-white px-4 py-2 outline-none rounded-md w-full border-2 border-white focus:border-primary-main"
+                    v-model="auth.name"
+                  />
+                </div>
                 <div>
                   <label for="email" class="block mb-1 text-primary-black font-semibold"
                     >メールアドレス</label
