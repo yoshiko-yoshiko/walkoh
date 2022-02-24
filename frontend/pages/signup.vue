@@ -80,7 +80,7 @@ export default {
   middleware: ["auth"],
   head() {
     return {
-      title: "Login Page",
+      title: "SignUp Page",
       bodyAttrs: {
       class: 'bg-primary-sub'
     }
