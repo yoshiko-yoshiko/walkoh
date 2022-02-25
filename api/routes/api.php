@@ -1,23 +1,23 @@
 <?php
 
 use Illuminate\Http\Request;
-use App\Http\Controllers\AuthController;
-use Illuminate\Routing\RouteGroup;
-use Tymon\JWTAuth\Http\Middleware\BaseMiddleware;
 
 /*
 |--------------------------------------------------------------------------
 | API Routes
 |--------------------------------------------------------------------------
+|
+| Here is where you can register API routes for your application. These
+| routes are loaded by the RouteServiceProvider within a group which
+| is assigned the "api" middleware group. Enjoy building your API!
+|
 */
 
-    Route::group(['middleware' => 'api','prefix' => 'Users'], function ($router) {
-    Route::get('/login', [AuthController::class, 'login']);
-    Route::post('/login', [AuthController::class, 'login']);
-    Route::get('/logout', [AuthController::class, 'login']);
-    Route::post('/logout', [AuthController::class, 'logout']);
-    Route::get('/refresh', [AuthController::class, 'login']);
-    Route::post('/refresh', [AuthController::class, 'refresh']);
-    Route::get('/me', [AuthController::class, 'login']);
-    Route::get('/me', [AuthController::class, 'me']);
-});
+Route::group(["middleware" => "api"], function () {
+    // 認証が必要ないメソッド
+    Route::post('/register', 'Auth\RegisterController@register');
+    Route::post('/login', 'Auth\LoginController@login');
+        Route::group(['middleware' => ['jwt.auth']], function () {
+        // 認証が必要なメソッド
+        });
+    });
