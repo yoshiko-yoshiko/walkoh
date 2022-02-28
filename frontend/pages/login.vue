@@ -32,6 +32,9 @@ export default {
     async register() {
       try {
         await this.$axios.post("Users/register", this.form);
+        await this.$auth.loginWith("User", { data: this.auth }).then(() => {
+          this.processing = false;
+        });
       } catch (e) {}
     },
   },
