@@ -18,6 +18,7 @@ Route::group(["middleware" => "api", "prefix" => 'Users'], function () {
     Route::post('/register', 'Auth\RegisterController@register');
     Route::post('/login', 'Auth\LoginController@login');
         Route::group(['middleware' => ['jwt.auth']], function () {
-        // 認証が必要なメソッド
+            // 認証が必要なメソッド
+            Route::get('me', 'Auth\MeController@me');
         });
     });

@@ -67,6 +67,7 @@ export default {
   ],
 
   auth: {
+    localStorage: false,
     redirect: {
       login: '/login',   // 未ログイン時に認証ルートへアクセスした際のリダイレクトURL
       logout: '/login',  // ログアウト時のリダイレクトURL
