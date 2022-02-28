@@ -13,7 +13,7 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::group(["middleware" => "api"], function () {
+Route::group(["middleware" => "api", "prefix" => 'Users'], function () {
     // 認証が必要ないメソッド
     Route::post('/register', 'Auth\RegisterController@register');
     Route::post('/login', 'Auth\LoginController@login');

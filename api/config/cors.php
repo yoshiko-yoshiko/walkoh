@@ -21,7 +21,7 @@ return [
      * You can enable CORS for 1 or multiple paths.
      * Example: ['api/*']
      */
-    'paths' => [],
+    'paths' => ['api/*'],
 
     /*
     * Matches the request method. `['*']` allows all methods.
@@ -33,7 +33,7 @@ return [
      */
     'allowed_origins' => [
             'http://localhost',
-            'http://localhost:3000'
+            'http://localhost:3000',
         ],
 
     /*
