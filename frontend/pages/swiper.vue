@@ -57,7 +57,10 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
+:root {
+  --swiper-theme-color: #4acea2;
+}
 .example {
   height: auto;
   .swiper {
@@ -79,11 +82,18 @@ export default {
       justify-content: center;
       align-items: center;
     }
-    .swiper-pagination {
-      > .swiper-pagination-bullet {
-        background-color: red;
+    .swiper-pagination-progressbar {
+      background: #fff;
       }
-    }
+    // .swiper-button-prev {
+    //   color: #4acea2;
+    // }
+    // .swiper-button-next {
+    //   color: #4acea2;
+    // }
+    // .swiper-pagination-progressbar-fill {
+    //   background: #4acea2;
+    // }
   }
 }
 </style>
