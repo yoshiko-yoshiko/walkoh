@@ -2,10 +2,17 @@
     <Tutorial/>
 </template>
 
-<script>
-import Tutorial from "../components/Tutorial.vue";
-export default {
-    middleware:['auth'],
-    component: { Tutorial },
-}
-</script>
+<style scoped>
+  .image {
+    max-width: 550px;
+    max-height: 550px;
+    object-fit: cover;
+  }
+  </style>
+
+  <script>
+  export default {
+    // middleware:['auth'],
+    comments: {},
+  };
+  </script>
