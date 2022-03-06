@@ -42,8 +42,7 @@ export default {
       mode: "client"
     },
     {
-      src: '~/plugins/VueAwesomeSwiper/VueAwesomeSwiper.js',
-      mode: "client"
+      src: '~/plugins/swiper/swiper.js', mode: 'client',
     },
   ],
 
