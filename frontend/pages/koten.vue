@@ -18,7 +18,7 @@
       </client-only>
     </div>
     <div class="flex justify-center">
-      <work class="mt-10" />
+      <work-item class="mt-10" />
     </div>
     <div class="flex justify-center">
       <PrimaryButton class="mt-10" />
@@ -28,8 +28,10 @@
 
 <script>
 import "swiper/css/swiper.css";
+import WorkItem from '../components/WorkItem.vue';
 
 export default {
+  components: { WorkItem },
   name: "SwiperNuxt",
   data() {
     return {
