@@ -17,11 +17,10 @@
         </swiper>
       </client-only>
     </div>
-    <div class="flex justify-center">
-      <work-item class="mt-10" />
-    </div>
-    <div class="flex justify-center">
-      <PrimaryButton class="mt-10" />
+    <div class="container justify-center mx-auto">
+      <work-item class="mt-10 grid" />
+      <primary-button class="mt-10 grid mx-auto" />
+      <koten-info class="mt-10 grid"/>
     </div>
   </div>
 </template>
