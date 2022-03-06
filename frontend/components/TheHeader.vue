@@ -27,19 +27,16 @@
                   <nuxt-link
                     to="koten"
                     class="ml-4 px-3 py-2 rounded-md text-sm font-semibold text-primary-black hover:text-white focus:text-white hover:bg-primary-main focus:bg-primary-hover"
-                    @click="isSelect('1')"
                     >個展を見る（借）</nuxt-link
                   >
                   <nuxt-link
                     to="exhibit"
                     class="ml-4 px-3 py-2 rounded-md text-sm font-semibold text-primary-black hover:text-white focus:text-white hover:bg-primary-main focus:bg-primary-hover"
-                    @click="isSelect('2')"
                     >出展する</nuxt-link
                   >
                   <nuxt-link
                     to="edit"
                     class="ml-4 px-3 py-2 rounded-md text-sm font-semibold text-primary-black hover:text-white focus:text-white hover:bg-primary-main focus:bg-primary-hover"
-                    @click="isSelect('3')"
                     >編集する</nuxt-link
                   >
                 </div>
@@ -141,19 +138,16 @@
             <nuxt-link
               to="koten"
               class="mt-1 block px-3 py-2 rounded-md text-base font-semibold text-primary-black hover:text-white hover:bg-primary-main"
-              @click="isSelect('1')"
               >個展を見る（借）</nuxt-link
             >
             <nuxt-link
               to="exhibit"
               class="mt-1 block px-3 py-2 rounded-md text-base font-semibold text-primary-black hover:text-white hover:bg-primary-main"
-              @click="isSelect('2')"
               >出典する</nuxt-link
             >
             <nuxt-link
               to="edit"
               class="mt-1 block px-3 py-2 rounded-md text-base font-semibold text-primary-black hover:text-white hover:bg-primary-main"
-              @click="isSelect('3')"
               >編集する</nuxt-link
             >
           </div>
