@@ -13,10 +13,10 @@
             class="flex flex-col items-center bg-primary-main rounded-lg gap-4 md:gap-6 px-8 py-6"
           >
             <h3 class="max-w-sm text-white text-xl lg:text-2xl">
-              個展のタイトル
+              {{ $store.state.koten.title }}
             </h3>
             <div class="max-w-md text-white lg:text-lg text-center">
-              “個展のディスクリプション”
+              “{{ $store.state.koten.description }}”
             </div>
 
             <div class="flex flex-col sm:flex-row items-center gap-2 md:gap-3">
@@ -35,12 +35,12 @@
                 <div
                   class="text-indigo-50 text-sm md:text-base font-bold text-center sm:text-left"
                 >
-                  ユーザーネーム
+                  {{ $store.state.user.name }}
                 </div>
                 <p
                   class="text-indigo-200 text-sm md:text-sm text-center sm:text-left"
                 >
-                  ユーザーID
+                  {{ $store.state.user.id }}
                 </p>
               </div>
             </div>
