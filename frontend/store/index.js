@@ -1,7 +1,7 @@
 export const state = () => ({
-  products: {
-    title: 'これはタイトルです',
-    price: 50,
-    description: '作品の説明がここにきます',
+  works: {
+    title: '作品のタイトル',
+    price: '作品の値段',
+    description: '作品のディスクリプション',
   },
 });

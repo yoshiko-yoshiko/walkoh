@@ -1,17 +1,15 @@
 <template>
   <div>
-    <div>
-      <strong class=" text-2xl">{{ $store.state.products.title }}</strong>
+      <strong class="text-2xl">{{ $store.state.works.title }}</strong>
     </div>
     <div>
       <p>
         <span>
-          <b class=" text-xl">&yen; {{ $store.state.products.price }}</b>
+          <b class="text-xl">&yen; {{ $store.state.works.price }}</b>
         </span>
       </p>
     </div>
-    <div>
-      <p>{{ $store.state.products.description }}</p>
+      <p>{{ $store.state.works.description }}</p>
     </div>
   </div>
 </template>
