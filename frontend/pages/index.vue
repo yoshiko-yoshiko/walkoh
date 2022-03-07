@@ -45,6 +45,7 @@
         </section>
       </div>
     </div>
+    <list-single />
   </div>
 </template>
 
@@ -57,10 +58,11 @@
 </style>
 
 <script>
+import ListSingle from '../components/ListSingle.vue';
 import TheHeader from '../components/TheHeader.vue';
 import TheHeaderPreLogin from '../components/TheHeaderPreLogin.vue';
 export default {
-  components: { TheHeader, TheHeaderPreLogin },
+  components: { TheHeader, TheHeaderPreLogin, ListSingle },
   // middleware:['auth'],
   comments: {},
 };
