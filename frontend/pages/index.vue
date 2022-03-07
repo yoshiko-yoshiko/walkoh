@@ -140,11 +140,6 @@
 <script>
 export default {
   // middleware:['auth'],
-  head: {
-    bodyAttrs: {
-      class: "bg-primary-sub",
-    },
-  },
   comments: {},
 };
 </script>
