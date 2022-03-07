@@ -86,7 +86,7 @@
                           >アカウント</nuxt-link
                         >
                         <nuxt-link
-                          to="signOut"
+                          to="/"
                           class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                           role="menuitem"
                           >サインアウト</nuxt-link
@@ -176,7 +176,7 @@
                 >アカウント</nuxt-link
               >
               <nuxt-link
-                to="signOut"
+                to="/"
                 class="mt-1 block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-100"
                 >サインアウト</nuxt-link
               >

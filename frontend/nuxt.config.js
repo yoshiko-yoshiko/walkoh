@@ -62,7 +62,8 @@ export default {
     '@nuxtjs/proxy',
     '@nuxtjs/dotenv',
     '@nuxtjs/auth-next',
-    'nuxt-svg-loader'
+    'nuxt-svg-loader',
+    '@nuxtjs/date-fns',
   ],
 
   auth: {

@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-primary-sub py-6 sm:py-8 lg:py-12">
+  <div class="bg-primary-white py-6 sm:py-8 lg:py-12">
     <div class="max-w-screen-lg px-4 md:px-8 mx-auto">
       <div class="grid sm:grid-cols-2 gap-8">
         <!-- content - start -->
@@ -39,11 +39,6 @@
 import Svg404 from "../../assets/images/404.svg";
 
 export default {
-  head: {
-    bodyAttrs: {
-      class: "bg-primary-sub",
-    },
-  },
   components: {
     Svg404,
   },
