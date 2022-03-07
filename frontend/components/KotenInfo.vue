@@ -3,7 +3,7 @@
     <div class="bg-white py-6 sm:py-8 lg:py-12">
       <div class="max-w-screen-md px-4 md:px-8 mx-auto">
         <h2
-          class="text-gray-800 text-2xl lg:text-3xl font-bold text-center mb-8 md:mb-12"
+          class="text-primary-black text-2xl lg:text-3xl font-bold text-center mb-8 md:mb-12"
         >
           個展の情報
         </h2>
