@@ -49,21 +49,23 @@
   </div>
 </template>
 
-<style scoped>
-.image {
-  max-width: 550px;
-  max-height: 550px;
-  object-fit: cover;
-}
-</style>
-
 <script>
 import ListSingle from '../components/ListSingle.vue';
 import TheHeader from '../components/TheHeader.vue';
 import TheHeaderPreLogin from '../components/TheHeaderPreLogin.vue';
 export default {
+  middleware:['auth'],
+  methods: {
+    async logout() {
+      this.$auth.logout();
+    }
+  },
   components: { TheHeader, TheHeaderPreLogin, ListSingle },
-  // middleware:['auth'],
-  comments: {},
 };
 </script>
+
+
+
+
+
+

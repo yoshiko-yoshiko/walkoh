@@ -67,11 +67,12 @@ export default {
   ],
 
   auth: {
+    localStorage: false,
     redirect: {
       login: '/login',   // 未ログイン時に認証ルートへアクセスした際のリダイレクトURL
       logout: '/login',  // ログアウト時のリダイレクトURL
       callback: false,   // Oauth認証等で必要となる コールバックルート
-      home: '/home',     // ログイン後のリダイレクトURL
+      home: '/',     // ログイン後のリダイレクトURL
     },
     strategies: {
       User: {
@@ -104,6 +105,10 @@ export default {
     // Workaround to avoid enforcing hard-coded localhost:3000: https://github.com/nuxt-community/axios-module/issues/308
     baseURL: process.env.API_URL,
     browserBaseURL: process.env.API_URL,
+    proxy: true
+  },
+  proxy: {
+    '/api': 'http://localhost:18080',
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build

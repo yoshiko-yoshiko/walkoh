@@ -1,3 +1,4 @@
+
 <template>
   <div class="container mx-auto flex flex-wrap md:h-screen items-center">
     <div class="w-full md:w-1/2 mt-20 md:mt-0">
@@ -56,50 +57,27 @@
   </div>
 </template>
 
-<style lang="sass">
-  .image_style
-    object-position: 30% 35%
-</style>
-
 <script>
-import SvgLogin from "../assets/images/login_img.svg";
 export default {
-  components: {
-    SvgLogin,
-  },
-  middleware: ["auth"],
-  head() {
-    return {
-      title: "Login Page",
-      bodyAttrs: {
-      class: 'bg-primary-sub'
-    }
-    };
-  },
+  middleware:['auth'],
   data() {
     return {
-      processing: false,
-      auth: {
+      form: {
         name: "",
         email: "",
         password: "",
-        error: false,
+        password_confirmation: "",
       },
     };
   },
   methods: {
-    async login() {
-      this.auth.error = false;
-      this.processing = true;
+    async register() {
       try {
+        await this.$axios.post("Users/register", this.form);
         await this.$auth.loginWith("User", { data: this.auth }).then(() => {
           this.processing = false;
         });
-      } catch (err) {
-        console.log(err);
-        this.auth.error = true;
-        this.processing = false;
-      }
+      } catch (e) {}
     },
   },
 };
