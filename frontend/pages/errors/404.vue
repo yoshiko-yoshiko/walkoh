@@ -42,5 +42,6 @@ export default {
   components: {
     Svg404,
   },
+  layout: 'loggedIn'
 };
 </script>
