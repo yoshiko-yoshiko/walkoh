@@ -32,6 +32,7 @@ import WorkItem from '../components/WorkItem.vue';
 export default {
   components: { WorkItem },
   name: "SwiperNuxt",
+  layout: 'loggedIn',
   data() {
     return {
       swiperOption: {
