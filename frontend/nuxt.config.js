@@ -42,8 +42,7 @@ export default {
       mode: "client"
     },
     {
-      src: '~/plugins/VueAwesomeSwiper/VueAwesomeSwiper.js',
-      mode: "client"
+      src: '~/plugins/swiper/swiper.js', mode: 'client',
     },
   ],
 
@@ -63,7 +62,8 @@ export default {
     '@nuxtjs/proxy',
     '@nuxtjs/dotenv',
     '@nuxtjs/auth-next',
-    'nuxt-svg-loader'
+    'nuxt-svg-loader',
+    '@nuxtjs/date-fns',
   ],
 
   auth: {
