@@ -1,10 +1,10 @@
 <template>
   <div>
     <!-- hero - start -->
-    <div class="bg-primary-sub pb-6 sm:pb-8 lg:pb-12">
+    <div class="bg-primary-white pb-6 sm:pb-8 lg:pb-12">
       <div class="max-w-screen-2xl px-4 md:px-8 mx-auto">
         <the-header-pre-login />
-        <section class="max-w-screen-2xl px-4 md:px-8 mx-auto">
+        <section class="max-w-screen-2xl px-4 md:px-8 mx-auto mt-5">
           <div class="flex flex-wrap justify-between mb-8 md:mb-16">
             <div
               class="w-full lg:w-1/3 flex flex-col justify-center lg:pt-48 lg:pb-24 mb-6 sm:mb-12 lg:mb-0"
