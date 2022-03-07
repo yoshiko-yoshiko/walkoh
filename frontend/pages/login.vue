@@ -12,7 +12,6 @@
     >
     登録する
     </button>
-
   </form>
 </template>
 
