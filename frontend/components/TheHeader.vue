@@ -85,12 +85,13 @@
                           role="menuitem"
                           >アカウント</nuxt-link
                         >
-                        <nuxt-link
-                          to="/"
-                          class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                          role="menuitem"
-                          >サインアウト</nuxt-link
-                        >
+                        <form @submit.prevent="logout">
+                          <button
+                            class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 w-full text-left"
+                          >
+                            ログアウト
+                          </button>
+                        </form>
                       </div>
                     </div>
                   </transition>
@@ -154,7 +155,11 @@
           <div class="pt-4 pb-3">
             <div class="flex items-center px-5">
               <div class="flex-shrink-0">
-                <img class="h-10 w-10 rounded-full" src="../assets/images/prof.jpg" alt="プロフ画像" />
+                <img
+                  class="h-10 w-10 rounded-full"
+                  src="../assets/images/prof.jpg"
+                  alt="プロフ画像"
+                />
               </div>
               <div class="ml-3">
                 <div
@@ -175,11 +180,14 @@
                 class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-100"
                 >アカウント</nuxt-link
               >
-              <nuxt-link
-                to="/"
-                class="mt-1 block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-100"
-                >サインアウト</nuxt-link
-              >
+
+              <form @submit.prevent="logout">
+                <button
+                  class="mt-1 block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-100 w-full text-left"
+                >
+                  ログアウト
+                </button>
+              </form>
             </div>
           </div>
         </div>
@@ -192,6 +200,7 @@
 
 <script>
 export default {
+  middleware: ["auth"],
   data() {
     return {
       isOpen: false,
@@ -200,6 +209,9 @@ export default {
   methods: {
     toggle() {
       this.isOpen = !this.isOpen;
+    },
+    async logout() {
+      this.$auth.logout();
     },
   },
 };
