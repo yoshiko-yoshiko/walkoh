@@ -1,6 +1,5 @@
 <template>
     <div>
-        <the-header></the-header>
         <p>コメント:<input type="text" v-model="title" /></p>
         <p><input type="file" @change="confirmImage" v-if="view" /></p>
 
@@ -22,20 +21,17 @@
                 <th>画像</th>
             </tr>
             <tr v-for="image in images" :key="image.id">
-                <td>{{ image.title }}</td>
-                <td><img class="img" :src="`${image.path}`" /></td>
+                <td>{{ title }}</td>
+                <td><img class="img" :src="`${}`" /></td>
             </tr>
         </table>
     </div>
 </template>
 
 <script>
-import axios from 'axios';
-import TheHeader from '../components/TheHeader.vue';
 
 export default {
-    components: { TheHeader },
-        data() {
+    data() {
         return {
             message: "",
             file: "",
@@ -50,13 +46,12 @@ export default {
     },
     methods: {
         getImage() {
-            axios
-                .get("/api/images")
+                this.$axios.post("/Users/ImageApi")
                 .then(response => {
                     this.images = response.data;
                 })
-                .catch(err => {
-                    this.message = err;
+                .catch(e => {
+                    this.message = e;
                 });
         },
         confirmImage(e) {
@@ -81,8 +76,7 @@ export default {
             data.append("file", this.file);
             data.append("title", this.title);
 
-            axios
-                .post("/api/images/", data)
+                this.$axios.post("/Users/ImageApi", data)
                 .then(response => {
                     this.getImage();
                     this.message = response.data.success;
@@ -96,10 +90,11 @@ export default {
                         this.view = true;
                     });
                 })
-                .catch(err => {
-                    this.message = err.response.data.errors;
+                .catch(e => {
+                    this.message = e.response.data.errors;
                 });
+
         }
     }
-    };
+};
 </script>

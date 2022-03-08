@@ -26,27 +26,21 @@ class ImageApiController extends Controller
      */
     public function store(Request $request)
     {
-        //
-        $this->validate($request, [
-            'title' => 'required|max:7',
-            'file' => 'required|image'
-        ], [
-            'title.required' => 'タイトルを入力して下さい',
-            'title.max' => '7文字以内で入力して下さい',
-            'file.required' => '画像が選択されていません',
-            'file.image' => '画像ファイルではありません',
-        ]);
- 
+
         if (request()->file) {
             $file_name = time() . '.' . request()->file->getClientOriginalName();
             request()->file->storeAs('public', $file_name);
- 
+
             $image = new Image();
             $image->path = 'storage/' . $file_name;
             $image->title = $request->title;
             $image->save();
- 
-            return ['success' => '登録しました!'];
+
+            return [
+                'success' => '登録しました!',
+                'image_path' => $image->path,
+                'title' => $request->title
+            ];
         }
     }
 
